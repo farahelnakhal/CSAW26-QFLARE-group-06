@@ -37,10 +37,15 @@ def save(path, result):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--setting", choices=SCHEDULES)
+    parser.add_argument("--rerun", action="store_true", help="regenerate the selected results")
     args = parser.parse_args()
     clean_results = load_clean()
     names = [args.setting] if args.setting else list(SCHEDULES)
     source_hash = sha256((ROOT / "extensions" / "scheduled_attack.py").read_bytes()).hexdigest()
+    if args.rerun:
+        for name in names:
+            category = "timing" if name.startswith("timing_") else "budget"
+            (ROOT / "extensions" / category / f"{name}.json").unlink(missing_ok=True)
 
     with threadpool_limits(limits=1):
         for seed in RULES["public_seeds"]:
