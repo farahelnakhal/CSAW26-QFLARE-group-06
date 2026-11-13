@@ -213,22 +213,4 @@ Exact formulas are taken from the attached formulation PDFs or code printed in t
 |  10 | **After the decision**, for $1\le t<60$, append $M$ to the three-value timing buffer and update $\tau$ by the rule on page 1, including skipped rounds.                                                                                                                               |
 |  11 | Save $q_t$, honest $d_t$, applied $a_t$, current weights, and $t$ on every call. **Return** the two 24-entry replacement updates and state. Reset state for each independent evaluation run.                                                                                          |
 
-## Source key
-
-1.  *the context.pdf*: original conversation context, pp.1–8 (scanned attachment); setup cross-checked against the formulation documents.
-
-2.  *Fix Attack Code.pdf*: scoring discussion (pp.5–7), method evolution, timing ablations, and printed clientwise/mixed implementations.
-
-3.  *QFLARE_Noise_Stall_Echo(2).pdf*: shared constraints, inverse-log schedule, and three baseline payloads.
-
-4.  *QFLARE_Six_Cases_Inverse_Log(1).pdf*: casewise policy and actions.
-
-5.  *QFLARE_Stall_Custom_Timing.pdf*; `attack_stall(1).py`: alternating Stall.
-
-6.  *QFLARE_Coordinated_Adaptive_Strategy.pdf*: orthogonal/reversal geometry and dynamic timing.
-
-7.  *QFLARE_Dynamic_Hybrid_Formulation.pdf* (duplicate also attached); *QFLARE_Hybrid_Inverse_Log_Formulation.pdf*; `attack_dynamic_hybrid.py`, `attack (1).py`: response-switching hybrids.
-
-8.  *QFLARE_Stall_Max_Dynamic.pdf*; `attack_stall_max.py` (duplicate also attached).
-
-9.  `attack_echo(1).py`: custom Echo; `attack(1).py`: inverse-log Noise. Results: user-supplied screenshot, rows 2–25.
+**AI Disclosure:** AI was used for code generation and writup formatting
